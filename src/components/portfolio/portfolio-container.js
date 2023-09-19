@@ -50,10 +50,9 @@ export default class PortfolioContainer extends Component{
     portfolioItems() {
         //a loop for the number of the items:
         return this.state.data.map(item => {
-            console.log("Item data", item);
+            //console.log("Item data", item);
             //debugger;
-            return <PortfolioItem key = {item.id} 
-            item = {item}/>;
+            return <PortfolioItem key = {item.id} item = {item}/>;
         })
     }
     handleFilter(filter){
@@ -76,14 +75,13 @@ export default class PortfolioContainer extends Component{
         
         return(
             <div>
-                <h2>{this.state.pageTitle}</h2>
-                {this.portfolioItems()}
-
-                <hr/>
-                {/*en la funcion, se pone () => porque sino se ejecutan todas al iniciarse la page y error!! */}
-                <button onClick={() => this.handleFilter('eCommerce')}>eCommerce</button>
-                <button onClick={() => this.handleFilter('Scheduling')}>Scheduling</button>
-                <button onClick={() => this.handleFilter('Enterprise')}>Enterprise</button>
+                <div className="portfolio-items-wrapper">
+                    {/*en la funcion, se pone () => porque sino se ejecutan todas al iniciarse la page y error!! */}
+                    <button className="btn" onClick={() => this.handleFilter('eCommerce')}>eCommerce</button>
+                    <button className="btn" onClick={() => this.handleFilter('Scheduling')}>Scheduling</button>
+                    <button className="btn" onClick={() => this.handleFilter('Enterprise')}>Enterprise</button>
+                    {this.portfolioItems()}
+                </div>
             </div>
         );
     }
