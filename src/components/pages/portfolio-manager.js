@@ -98,9 +98,7 @@ export default class PortfolioManager extends Component{
                     data={this.state.portfolioItems}         
                     handleEditClick={this.handleEditClick}        
                     />
-                </div>
-                
-                
+                </div>                               
             </div>
         );
     }
